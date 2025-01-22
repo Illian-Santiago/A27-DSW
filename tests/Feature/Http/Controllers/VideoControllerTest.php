@@ -36,6 +36,6 @@ final class VideoControllerTest extends TestCase
 
         $response->assertOk();
         $response->assertViewIs('video.show');
-        $response->assertViewHas('videos');
+        $response->assertViewHas('video');
     }
 }

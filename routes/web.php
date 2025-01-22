@@ -12,3 +12,10 @@ Route::resource('videos', App\Http\Controllers\VideoController::class)->only('in
 Route::resource('comments', App\Http\Controllers\CommentController::class)->only('create', 'store');
 
 Route::resource('watches', App\Http\Controllers\Api\WatchController::class)->only('store');
+
+
+Route::resource('videos', App\Http\Controllers\VideoController::class)->only('index', 'show');
+
+Route::resource('comments', App\Http\Controllers\CommentController::class)->only('create', 'store');
+
+Route::resource('watches', App\Http\Controllers\Api\WatchController::class)->only('store');

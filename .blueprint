@@ -5,9 +5,9 @@ created:
     - database/factories/VideoFactory.php
     - database/factories/CommentFactory.php
     - database/factories/WatchFactory.php
-    - database/migrations/2025_01_22_145025_create_videos_table.php
-    - database/migrations/2025_01_22_145026_create_comments_table.php
-    - database/migrations/2025_01_22_145027_create_watches_table.php
+    - database/migrations/2025_01_22_152531_create_videos_table.php
+    - database/migrations/2025_01_22_152532_create_comments_table.php
+    - database/migrations/2025_01_22_152533_create_watches_table.php
     - app/Models/Video.php
     - app/Models/Comment.php
     - app/Models/Watch.php

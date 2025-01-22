@@ -19,11 +19,7 @@ models:
 # Generación de los controladores
 controllers:
   Video: # Del controlador de video
-    index: # Método index
-      query: all # Consulta todos los registros de videos
-      render: video.index with:videos # Devuelve la vista video.index con la variable videos
-    show: # Método show
-      render: video.show with:videos # Devuelve la vista video.show con la variable videos
+    resource: index, show # Genera los métodos index y show
 
   Comment: # Del controlador de comment
     create: # Método create

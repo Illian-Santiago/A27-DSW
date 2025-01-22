@@ -17,6 +17,6 @@ class VideoController extends Controller
 
     public function show(Request $request, Video $video): Response
     {
-        return view('video.show', compact('videos'));
+        return view('video.show', compact('video'));
     }
 }
