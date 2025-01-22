@@ -1,13 +1,29 @@
 created:
+    - app/Http/Controllers/VideoController.php
+    - app/Http/Controllers/CommentController.php
+    - app/Http/Controllers/Api/WatchController.php
     - database/factories/VideoFactory.php
     - database/factories/CommentFactory.php
     - database/factories/WatchFactory.php
-    - database/migrations/2025_01_22_115838_create_videos_table.php
-    - database/migrations/2025_01_22_115839_create_comments_table.php
-    - database/migrations/2025_01_22_115840_create_watches_table.php
+    - database/migrations/2025_01_22_145025_create_videos_table.php
+    - database/migrations/2025_01_22_145026_create_comments_table.php
+    - database/migrations/2025_01_22_145027_create_watches_table.php
     - app/Models/Video.php
     - app/Models/Comment.php
     - app/Models/Watch.php
+    - tests/Feature/Http/Controllers/VideoControllerTest.php
+    - tests/Feature/Http/Controllers/CommentControllerTest.php
+    - tests/Feature/Http/Controllers/Api/WatchControllerTest.php
+    - app/Events/NewComment.php
+    - app/Http/Requests/CommentStoreRequest.php
+    - app/Http/Requests/Api/WatchStoreRequest.php
+    - app/Mail/CommentCreated.php
+    - resources/views/emails/comment-created.blade.php
+    - resources/views/video/index.blade.php
+    - resources/views/video/show.blade.php
+    - resources/views/comment/create.blade.php
+updated:
+    - routes/web.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
     Video: { title: string, synopsis: 'longtext nullable', duration: 'decimal:8,2' }
