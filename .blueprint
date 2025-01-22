@@ -1,0 +1,15 @@
+created:
+    - database/factories/VideoFactory.php
+    - database/factories/CommentFactory.php
+    - database/factories/WatchFactory.php
+    - database/migrations/2025_01_22_115838_create_videos_table.php
+    - database/migrations/2025_01_22_115839_create_comments_table.php
+    - database/migrations/2025_01_22_115840_create_watches_table.php
+    - app/Models/Video.php
+    - app/Models/Comment.php
+    - app/Models/Watch.php
+models:
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
+    Video: { title: string, synopsis: 'longtext nullable', duration: 'decimal:8,2' }
+    Comment: { user_id: id, video_id: id, content: longtext, approved: boolean }
+    Watch: { user_id: id, video_id: id, completed_at: datetime, timestamps: false }
