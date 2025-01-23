@@ -4,7 +4,7 @@ models:
     synopsis: longtext nullable
     duration: decimal:8,2
     relationships:
-      hasMany: Comments, Watchs
+      hasMany: Comments,Watchs
 
   Comment:
     user_id: id
@@ -12,7 +12,7 @@ models:
     content: longtext
     approved: boolean
     relationships:
-      belongsTo: User, Video
+      belongsTo: User,Video
 
   Watch:
     user_id: id
@@ -20,7 +20,7 @@ models:
     completed_at: datetime
     timestamps: false
     relationships:
-      belongsTo: User, Video
+      belongsTo: User,Video
 
 # Generación de los controladores
 controllers:
