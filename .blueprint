@@ -5,12 +5,15 @@ created:
     - database/factories/VideoFactory.php
     - database/factories/CommentFactory.php
     - database/factories/WatchFactory.php
-    - database/migrations/2025_01_22_152531_create_videos_table.php
-    - database/migrations/2025_01_22_152532_create_comments_table.php
-    - database/migrations/2025_01_22_152533_create_watches_table.php
+    - database/migrations/2025_01_23_144523_create_videos_table.php
+    - database/migrations/2025_01_23_144524_create_comments_table.php
+    - database/migrations/2025_01_23_144525_create_watches_table.php
     - app/Models/Video.php
     - app/Models/Comment.php
     - app/Models/Watch.php
+    - database/seeders/VideoSeeder.php
+    - database/seeders/CommentSeeder.php
+    - database/seeders/WatchSeeder.php
     - tests/Feature/Http/Controllers/VideoControllerTest.php
     - tests/Feature/Http/Controllers/CommentControllerTest.php
     - tests/Feature/Http/Controllers/Api/WatchControllerTest.php
@@ -26,6 +29,6 @@ updated:
     - routes/web.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
-    Video: { title: string, synopsis: 'longtext nullable', duration: 'decimal:8,2' }
-    Comment: { user_id: id, video_id: id, content: longtext, approved: boolean }
-    Watch: { user_id: id, video_id: id, completed_at: datetime, timestamps: false }
+    Video: { title: string, synopsis: 'longtext nullable', duration: 'decimal:8,2', relationships: { hasMany: 'Comment, watch' } }
+    Comment: { user_id: id, video_id: id, content: longtext, approved: boolean, relationships: { belongsTo: 'User, Video' } }
+    Watch: { user_id: id, video_id: id, completed_at: datetime, timestamps: false, relationships: { belongsTo: 'User, Video' } }

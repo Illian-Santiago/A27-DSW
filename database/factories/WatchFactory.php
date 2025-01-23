@@ -4,8 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\;
 use App\Models\User;
-use App\Models\Video;
 use App\Models\Watch;
 
 class WatchFactory extends Factory
@@ -24,7 +24,7 @@ class WatchFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'video_id' => Video::factory(),
+            'video_id' => ::factory(),
             'completed_at' => $this->faker->dateTime(),
         ];
     }

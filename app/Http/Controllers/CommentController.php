@@ -26,7 +26,7 @@ class CommentController extends Controller
 
         Mail::send(new CommentCreated($commment));
 
-        $request->session()->flash('message', $message);
+        $request->session()->flash('Comentrio creado exitosamente', $Comentrio creado exitosamente);
 
         return redirect()->route('comment.create');
     }

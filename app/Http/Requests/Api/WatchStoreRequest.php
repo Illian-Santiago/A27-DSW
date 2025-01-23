@@ -20,8 +20,8 @@ class WatchStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => ['required', 'integer', 'exists:users,id'],
-            'video_id' => ['required', 'integer', 'exists:videos,id'],
+            'user_id' => ['required', 'integer', 'exists:Users,id'],
+            'video_id' => ['required', 'integer', 'exists:,id'],
         ];
     }
 }

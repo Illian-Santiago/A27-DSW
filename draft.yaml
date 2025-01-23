@@ -3,18 +3,24 @@ models:
     title: string
     synopsis: longtext nullable
     duration: decimal:8,2
+    relationships:
+      hasMany: Comment, watch
 
   Comment:
     user_id: id
     video_id: id
     content: longtext
     approved: boolean
+    relationships:
+      belongsTo: User, Video
 
   Watch:
     user_id: id
     video_id: id
     completed_at: datetime
     timestamps: false
+    relationships:
+      belongsTo: User, Video
 
 # Generación de los controladores
 controllers:
@@ -29,7 +35,7 @@ controllers:
       save: comment # Guarda en la variable comment el objeto creado con el campo content validado
       fire: NewComment with:commment # Lanza el evento NewComment con la variable comment
       send: CommentCreated with:commment # Envía un correo que se manda a traves del evento CommentCreated con la variable comment
-      flash: message # Muestra un mensaje flash con la variable message
+      flash: "Comentrio creado exitosamente" # Muestra un mensaje flash con la variable message
       redirect: comment.create # Redirige a la vista comment.create
 
   Api\Watch: # Del controlador de watch dentro del directorio Api
@@ -37,3 +43,6 @@ controllers:
       validate: user_id, video_id # Valida los campos user_id y video_id
       save: watch # Guarda en la variable watch el objeto creado con los campos user_id y video_id validados
       respond: 204 # Responde con el código 204
+
+# Genera los seeders de Video, Comment y Watch
+seeders: Video, Comment, Watch

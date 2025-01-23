@@ -59,7 +59,7 @@ final class CommentControllerTest extends TestCase
         $comment = $comments->first();
 
         $response->assertRedirect(route('comment.create'));
-        $response->assertSessionHas('message', $message);
+        $response->assertSessionHas('Comentrio creado exitosamente', $Comentrio creado exitosamente);
 
         Event::assertDispatched(NewComment::class, function ($event) use ($commment) {
             return $event->commment->is($commment);

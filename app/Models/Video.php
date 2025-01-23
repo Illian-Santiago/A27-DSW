@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Video extends Model
 {
@@ -29,4 +30,14 @@ class Video extends Model
         'id' => 'integer',
         'duration' => 'decimal:2',
     ];
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function watches(): HasMany
+    {
+        return $this->hasMany(Watch::class);
+    }
 }

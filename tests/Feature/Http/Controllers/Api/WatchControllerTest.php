@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Http\Controllers\Api;
 
+use App\Models\;
 use App\Models\User;
-use App\Models\Video;
 use App\Models\Watch;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -32,7 +32,7 @@ final class WatchControllerTest extends TestCase
     public function store_saves_and_responds_with(): void
     {
         $user = User::factory()->create();
-        $video = Video::factory()->create();
+        $video = ::factory()->create();
 
         $response = $this->post(route('watches.store'), [
             'user_id' => $user->id,
