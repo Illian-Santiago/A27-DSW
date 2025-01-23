@@ -4,7 +4,7 @@ models:
     synopsis: longtext nullable
     duration: decimal:8,2
     relationships:
-      hasMany: Comments,Watchs
+      hasMany: Comment,Watch
 
   Comment:
     user_id: id
