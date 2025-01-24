@@ -26,13 +26,13 @@ models:
     name: string
     city: string
     country: string
-    postal_code: string
+    postal_code: tinyInteger
     relationships:
-      hasMany: Venue, Speaker
+      hasMany: Venue,Speaker,Talk
 
   Venue:
     name: string
-    description: string
+    description: text
     date_start: date
     date_end: date
     status: enum:pending,active,cancelled
@@ -46,14 +46,14 @@ models:
     biography: text
     twitter: string
     relationships:
-      hasMany: Conference, Talk
+      hasMany: Conference,Talk
 
   Talk:
     title: string
     description: longtext
     speaker_id: id
     relationships:
-      belongsTo: Conference
+      belongsTo: Speaker,Conference
 
 # Generación de los controladores
 controllers:
