@@ -21,8 +21,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            VideoSeeder::class,
             CommentSeeder::class,
+            ConferenceSeeder::class,
+            SpeakerSeeder::class,
+            TalkSeeder::class,
+            VenueSeeder::class,
+            VideoSeeder::class,
             WatchSeeder::class,
         ]);
     }
