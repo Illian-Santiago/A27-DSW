@@ -28,7 +28,7 @@ models:
     country: string
     postal_code: string
     relationships:
-      hasMany: Venue,Speaker,Talk
+      hasMany: Venue,Talk
 
   Venue:
     name: string
@@ -37,6 +37,7 @@ models:
     date_end: date
     status: enum:pending,active,cancelled
     region: string
+    conference_id: id
     relationships:
       belongsTo: Conference
 
@@ -46,12 +47,13 @@ models:
     biography: text
     twitter: string
     relationships:
-      hasMany: Conference,Talk
+      hasMany: Talk
 
   Talk:
     title: string
     description: longtext
     speaker_id: id
+    conference_id: id
     relationships:
       belongsTo: Speaker,Conference
 
